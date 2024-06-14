@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form đơn giản Phần 1</title>
+    <style>
+        .div1 {
+            background-color: aqua;
+            padding: 15px;
+        }
+        .div2 {
+            background-color: white;
+            padding: 10px;
+        }
+        .td1 {
+            text-align:right;
+            padding-right:10px;
+            color: blue;
+        }
+        .td2 {
+            color:#ff8400;
+        }
+        .td3 {
+            font-size: 16px;
+            padding: 5px;
+            width: 120px;
+            background-color: blue;
+            color: white;
+            border: 1px solid black;
+        }
+        .td4 {
+            font-size: 16px;
+            padding: 5px;
+            width: 120px;
+            border: 1px solid black;
+        }
+        table {
+            width:100%;
+        }
+        table, th, td {
+            border: 1px solid white;
+            border-collapse: collapse;
+            font-family: Arial,serif;
+        }
+        th, td {
+            padding: 2px;
+            text-align: left;
+        }
+        h2 {
+            padding: 5px;
+            font-family: Arial,serif;
+            text-align: center;
+            background-color: #ff6a00;
+            color: white;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="div1">
+    <div class="div2">
+        <h2>SỞ THÍCH CỦA BẠN</h2>
+        <form method="post">
+        <table style="margin-top:0">
+        <tr>
+            <td class="td1">Họ và tên</td>
+            <td colspan="3"><label><input type="text" name="full name" size="50px"></label></td>
+        </tr>
+        <tr>
+            <td  class="td1">Email</td>
+            <td colspan="3"><label><input type="email" name="email" size="50px"></label></td>
+        </tr>
+        <tr>
+            <td class="td1">Sở thích</td>
+            <td class="td2"><label><input name="hobby" value="sport" type="checkbox">Thể thao</label></td>
+            <td class="td2"><label><input name="hobby" value="music" type="checkbox">Âm nhạc</label></td>
+            <td class="td2"><label><input name="hobby" value="book" type="checkbox">Đọc sách</label></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="td2"><label><input name="hobby" value="web" type="checkbox">Lướt web</label></td>
+            <td class="td2"><label><input name="hobby" value="game" type="checkbox">Chơi game</label></td>
+            <td class="td2"><label><input name="hobby" value="movie" type="checkbox">Điện ảnh</label></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="td2"><label><input name="hobby" value="travel" type="checkbox">Du lịch</label></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="2">
+                <input type="submit" value="Gửi thông tin" class="td3">
+                <input type="reset" value="Nhập lại" class="td4">
+            </td>
+        </tr>
+        </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>

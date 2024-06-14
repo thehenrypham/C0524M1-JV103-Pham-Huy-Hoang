@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form đơn giản Phần 1</title>
+    <style>
+        .div1 {
+            background-color: #fffcad;
+            padding: 4px;
+        }
+        h2 {
+            background-color: #d5fcd7;
+            color: #103ffb;
+            font-family: Arial,serif;
+            padding: 4px;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+        td {
+            font-family: Arial, serif;
+            padding-right: 40px;
+            color: #103ffb;
+        }
+        .td3 {
+            font-size: 16px;
+            padding: 5px;
+            width: 120px;
+            background-color: blue;
+            color: white;
+            border: 1px solid black;
+        }
+        .td4 {
+            font-size: 16px;
+            padding: 5px;
+            width: 120px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div class="div1">
+    <h2>ĐĂNG KÝ HỌC VIÊN</h2>
+    <form>
+        <table>
+            <tr>
+                <td>Họ và tên</td>
+                <td><label><input type="text" name="full-name" size="20px"></label></td>
+            </tr>
+            <tr>
+                <td>Ngày sinh</td>
+                <td><label><input type="date" name="birthday" size="50px"></label></td>
+            </tr>
+            <tr>
+                <td>Giới tính</td>
+                <td>
+                    <label><input type="radio" name="gender" value="male">Nam</label>
+                    <label><input type="radio" name="gender" value="female">Nữ</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Địa chỉ</td>
+                <td><label>
+                    <textarea cols="20" rows="4"></textarea>
+                </label></td>
+            </tr>
+            <tr>
+                <td>Lớp</td>
+                <td>
+                    <label>
+                        <select name="class">
+                            <option value="select">--- Chọn lớp ---</option>
+                            <option value="10A1">10A1</option>
+                            <option value="10A2">10A2</option>
+                            <option value="10A3">10A3</option>
+                        </select>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><label><input type="email" name="email" size="20px"></label></td>
+            </tr>
+            <tr>
+                <td>Điện thoại</td>
+                <td><label><input type="text" name="phone-number" size="20px>"></label></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Đăng ký" class="td3">
+                    <input type="reset" value="Nhập lại" class="td4">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
