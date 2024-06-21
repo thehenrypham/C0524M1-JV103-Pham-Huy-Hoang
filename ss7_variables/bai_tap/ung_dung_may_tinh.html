@@ -17,27 +17,29 @@
     <p id="result">Result Division: </p>
 </form>
 <script>
+    let input1 = document.getElementById("number1");
+    let input2 = document.getElementById("number2");
     function addition() {
-        let number1 = +document.getElementById("number1").value;
-        let number2 = +document.getElementById("number2").value;
+        let number1 = +input1.value;
+        let number2 = +input2.value;
         let result = number1 + number2;
         document.getElementById("result").innerText = "Result Division: " + result;
     }
     function subtraction() {
-        let number1 = +document.getElementById("number1").value;
-        let number2 = +document.getElementById("number2").value;
+        let number1 = +input1.value;
+        let number2 = +input2.value;
         let result = number1 - number2;
         document.getElementById("result").innerText = "Result Division: " + result;
     }
     function multi() {
-        let number1 = +document.getElementById("number1").value;
-        let number2 = +document.getElementById("number2").value;
+        let number1 = +input1.value;
+        let number2 = +input2.value;
         let result = number1 * number2;
         document.getElementById("result").innerText = "Result Division: " + result;
     }
     function division() {
-        let number1 = +document.getElementById("number1").value;
-        let number2 = +document.getElementById("number2").value;
+        let number1 = +input1.value;
+        let number2 = +input2.value;
         let result = number1 / number2;
         document.getElementById("result").innerText = "Result Division: " + result;
     }

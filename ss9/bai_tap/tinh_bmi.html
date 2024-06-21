@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính chỉ số cân nặng của cơ thể</title>
+    <style>
+        p {
+            margin-bottom: 5px;
+            margin-top: 0;
+        }
+        table {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <th>Weight (kg)</th>
+            <th>Height (m)</th>
+        </tr>
+        <tr>
+            <td><label><input type="number" id="weight"></label></td>
+            <td><label><input type="number" id="height"></label></td>
+            <td><button type="button" onclick="check()">Check BMI</button></td>
+        </tr>
+    </table>
+</form>
+<p id="bmi">BMI:</p>
+<p id="inter">Interpretation: </p>
+<script>
+    function check() {
+        let weight = document.getElementById("weight").value;
+        let height = document.getElementById("height").value;
+        let bmia = weight / (height * height);
+        let bmi = +bmia.toFixed(2);
+        document.getElementById("bmi").innerText = "BMI: " + bmi;
+        let inter;
+        if (bmi < 18.5) {
+            inter = "Underweight";
+            document.getElementById("inter").innerText = inter;
+        } else if (bmi < 25) {
+            inter = "Normal";
+            document.getElementById("inter").innerText = "Interpretation: " + inter;
+        } else if (bmi < 30) {
+            inter = "Overweight";
+            document.getElementById("inter").innerText = "Interpretation: " + inter;
+        } else if (isNaN(bmi)) {
+            document.getElementById("inter").innerText = "Interpretation: " + "NaN";
+        } else {
+            inter = "Obese";
+            document.getElementById("inter").innerText = "Interpretation: " + inter;
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính đơn giản</title>
+    <style>
+        td {
+            text-align: center;
+        }
+        button {
+            width: 30px;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <td colspan="4"><label><input type="text" id="window"></label></td>
+        </tr>
+        <tr>
+            <td><button onclick="nhap(1)">1</button></td>
+            <td><button onclick="nhap(2)">2</button></td>
+            <td><button onclick="nhap(3)">3</button></td>
+            <td><button onclick="nhap('+')">+</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="nhap(4)">4</button></td>
+            <td><button onclick="nhap(5)">5</button></td>
+            <td><button onclick="nhap(6)">6</button></td>
+            <td><button onclick="nhap('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="nhap(7)">7</button></td>
+            <td><button onclick="nhap(8)">8</button></td>
+            <td><button onclick="nhap(9)">9</button></td>
+            <td><button onclick="nhap('x')">x</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="clear()">C</button></td>
+            <td><button onclick="nhap(0)">0</button></td>
+            <td><button onclick="equal()">=</button></td>
+            <td><button onclick="nhap('/')">/</button></td>
+        </tr>
+    </table>
+</form>
+<script>
+    let input = document.getElementById(window);
+    function nhap() {
+        input.value +=1;
+    }
+    function equal() {
+        let string = document.getElementById("window").value;
+        let result = eval(string);
+        input.value = result;
+    }
+    function clear() {
+        input.value = "";
+    }
+</script>
+</body>
+</html>
