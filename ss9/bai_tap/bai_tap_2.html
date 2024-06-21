@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10</title>
+</head>
+<body>
+<h3>Nhập tuổi của học sinh:</h3>
+<label><input type="number" id="tuoi"></label>
+<button type="button" onclick="check()">Kiểm tra điều kiện</button>
+<p id="ketQua"></p>
+<script>
+    function check() {
+        let tuoi = +document.getElementById("tuoi").value;
+        let lop = tuoi - 5;
+        if (lop < 11) {
+            document.getElementById("ketQua").innerText = "Không đủ điều kiện vào học lớp 10";
+        } else {
+            document.getElementById("ketQua").innerText = "Đủ điều kiện vào học lớp 10";
+        }
+    }
+</script>
+</body>
+</html>

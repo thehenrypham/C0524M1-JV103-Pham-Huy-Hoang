@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng</title>
+</head>
+<body>
+<p>Nhập doanh số bán hàng:</p>
+<label><input type="number" id="doanhSo"></label>
+<label><button type="button" onclick="hoaHong()">Tính hoa hồng</button></label>
+<p id="hoaHong"></p>
+<script>
+    function hoaHong() {
+        let doanhSo = +document.getElementById("doanhso").value;
+        let hoaHong;
+        if (doanhSo > 10000000) {
+            hoaHong = doanhSo * 0.7;
+            document.getElementById("hoaHong").innerText = "Hoa hồng là:" + hoaHong + "đ";
+        } else if (doanhSo > 7000000) {
+            hoaHong = doanhSo * 0.5;
+            document.getElementById("hoaHong").innerText = "Hoa hồng là:" + hoaHong + "đ";
+        } else {
+            hoaHong = doanhSo * 0.3;
+            document.getElementById("hoaHong").innerText = "Hoa hồng là: " + hoaHong + "đ";
+        }
+    }
+</script>
+</body>
+</html>

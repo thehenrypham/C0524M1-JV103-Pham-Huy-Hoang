@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xếp hạng học lực của học sinh</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Điểm bài kiểm tra</th>
+        <th>Điểm thi giữa kỳ</th>
+        <th>Điểm thi cuối kỳ</th>
+    </tr>
+    <tr>
+        <td><label><input type="number" id="kiemTra"></label></td>
+        <td><label><input type="number" id="giuaKy"></label></td>
+        <td><label><input type="number" id="cuoiKy"></label></td>
+        <td><label><button type="button" onclick="check()">Xếp hạng học lực</button></label></td>
+    </tr>
+</table>
+<p id="hocLuc">Học lực: </p>
+<script>
+    function check() {
+        let kiemTra = +document.getElementById("kiemTra").value;
+        let giuaKy = +document.getElementById("giuaKy").value;
+        let cuoiKy = +document.getElementById("cuoiKy").value;
+        let diemTrungBinh = (kiemTra + giuaKy*2 + cuoiKy*3)/6;
+        if (diemTrungBinh > 9) {
+            document.getElementById("hocLuc").innerText = "Học lực: Giỏi";
+        } else if (diemTrungBinh > 7) {
+            document.getElementById("hocLuc").innerText = "Học lực: Khá";
+        } else if (diemTrungBinh > 5) {
+            document.getElementById("hocLuc").innerText = "Học lực: Trung Bình";
+        } else {
+            document.getElementById("hocLuc").innerText = "Học lực: Yếu";
+        }
+    }
+</script>
+</body>
+</html>
