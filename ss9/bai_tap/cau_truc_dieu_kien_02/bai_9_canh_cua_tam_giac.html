@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra cạnh của tam giác</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Nhập số thực a");
+    let b = +prompt("Nhập số thực b");
+    let c = +prompt("Nhập số thực c");
+    if (a > 0 && b > 0 && c > 0) {
+        document.write("Đây là 3 cạnh của một tam giác");
+    } else if ((a + b) > c) {
+        document.write("Đây là 3 cạnh của một tam giác");
+    } else if ((b + c) > a) {
+        document.write("Đây là 3 cạnh của một tam giác");
+    } else if ((a + c) > b) {
+        document.write("Đây là 3 cạnh của một tam giác");
+    } else {
+        document.write("Đây không phải là 3 cạnh của một tam giác")
+    }
+</script>
+</body>
+</html>
