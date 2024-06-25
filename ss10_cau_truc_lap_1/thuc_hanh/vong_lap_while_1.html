@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vòng lặp while 1</title>
+</head>
+<body>
+<script>
+    // Bước 1: Khai báo biến num để lưu giá trị nhập vào từ hộp thoại.
+    let num = +prompt("Enter a number: ");
+    // Bước 2: Khai báo biến total để lưu tổng.
+    let total = 0;
+    // Bước 3: Phân tích vòng lặp
+    // Điều kiện vòng lặp thực hiện: num != -1
+    // Bước 4: Viết mã phần thân vòng lặp
+    while (num !== -1) {
+        num = +prompt("Enter a number: ");
+        alert(num);
+        total += num;
+    }
+    alert(total);
+</script>
+</body>
+</html>

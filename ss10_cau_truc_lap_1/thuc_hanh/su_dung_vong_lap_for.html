@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sử dụng vòng lặp for</title>
+</head>
+<body>
+<h2>JavaScript Loops</h2>
+<p id="demo"></p>
+<script>
+    let text = "";
+    let i;
+    //Phân tích 3 phần trong vòng lặp for
+    // Khởi tạo: i = 0
+    // Điều kiện: i < 5
+    // Lệnh lặp lại: i = i + 1
+    for (i = 0; i < 5; i++) {
+        text += "The number is " + i + "<br>";
+    }
+    document.getElementById("demo").innerHTML = text;
+</script>
+</body>
+</html>
