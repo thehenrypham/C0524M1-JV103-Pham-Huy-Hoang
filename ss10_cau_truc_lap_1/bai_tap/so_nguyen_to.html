@@ -8,7 +8,7 @@
 <script>
     let numbers = +prompt("Nhập số lượng số nguyên tố cần in:");
     let count = 0;
-    function isPrime(num) {
+    function nguyenTo(num) {
         if (num <= 1) return false;
         for (let i = 2; i <= Math.sqrt(num); i++) {
             if (num % i === 0) return false;
@@ -17,7 +17,7 @@
     }
     let num = 2;
     while (count < numbers) {
-        if (isPrime(num)) {
+        if (nguyenTo(num)) {
             document.write(num +"<br>");
             count++;
         }

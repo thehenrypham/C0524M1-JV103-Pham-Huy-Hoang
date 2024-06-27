@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giai thừa của một số nguyên dương</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập số nguyên dương cần tính giai thừa: ");
+    let factorial = 1;
+    for (let i = 1; i <= n; i++) {
+        factorial *= i;
+    }
+    document.write("Giai thừa của " + n + " là: " + factorial);
+</script>
+</body>
+</html>

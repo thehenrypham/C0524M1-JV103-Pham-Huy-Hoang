@@ -7,11 +7,8 @@
 <body>
 <script>
     let temp = +prompt("Nhập nhiệt độ hiện tại:");
-    while (temp > 100) {
-        temp = +prompt("Yêu cầu giảm nhiệt độ:");
-    }
-    while (temp < 20) {
-        temp = +prompt("Yêu cầu tăng nhiệt độ:")
+    while (temp > 100 || temp < 20) {
+        temp = +prompt("Nhập lại nhiệt độ:");
     }
 </script>
 </body>
