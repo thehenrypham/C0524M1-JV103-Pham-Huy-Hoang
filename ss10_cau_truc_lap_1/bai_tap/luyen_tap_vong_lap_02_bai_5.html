@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình tính lãi ngân hàng</title>
+</head>
+<body>
+<script>
+    let money = +prompt("Nhập số tiền vay: ");
+    let month = +prompt("Nhập số tháng cho vay: ");
+    let rate = +prompt("Nhập lãi suất hàng tháng (%): ");
+    let interest = 0;
+    for (let i = 1; i <= month; i++) {
+        interest += money * rate / 100;
+        money += interest;
+    }
+    document.write("Tiền lãi phải trả sau " + month + " tháng là " + interest);
+</script>
+</body>
+</html>
