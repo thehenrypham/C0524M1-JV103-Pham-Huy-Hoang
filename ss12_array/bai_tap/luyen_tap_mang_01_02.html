@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị phần tử có giá trị lớn nhất trong mảng</title>
+</head>
+<body>
+<script>
+    let num = [23,231,42,5,-6,30,12,43,55,90];
+    document.write("Mảng ban đầu: " + num + "<br>");
+    let lonNhat;
+    lonNhat = Math.max.apply(Math, num);
+    document.write("Phần tử lớn nhất là: "+ lonNhat + "<br>");
+    document.write("Vị trí của phần tử là: " + num.indexOf(lonNhat));
+</script>
+</body>
+</html>

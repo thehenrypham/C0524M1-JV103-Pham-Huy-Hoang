@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sử dụng các hàm có sẵn của mảng - 2</title>
+</head>
+<body>
+<script>
+    let num = prompt("Nhập một số: ");
+    let arr;
+    arr = [];
+    for (let i = 0; i < num.length; i++) {
+        arr.push(num[i]);
+    }
+    for (let j = 1; j < arr.length; j++) {
+        if (arr[j - 1] % 2 === 0 && arr[j] % 2 === 0) {
+            arr.splice(j, 0, "-");
+        }
+    }
+    document.write(arr.join(''));
+</script>
+</body>
+</html>

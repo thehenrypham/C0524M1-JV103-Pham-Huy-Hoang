@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In ra giá trị trung bình của các phần tử trong mảng</title>
+</head>
+<body>
+<script>
+    let num = [23,231,42,5,-6,30,12,43,55,90];
+    document.write("Mảng ban đầu: " + num + "<br>");
+    let lonNhat = Math.max.apply(Math, num);
+    document.write("Phần tử lớn nhất là: "+ lonNhat + "<br>");
+    let sum = 0;
+    for (let i = 0; i <= num.length; i++) {
+        sum += num[0];
+    }
+    let average =  sum / num.length;
+    document.write("Giá trị trung bình của các phần tử trong mảng là: " + average);
+</script>
+</body>
+</html>

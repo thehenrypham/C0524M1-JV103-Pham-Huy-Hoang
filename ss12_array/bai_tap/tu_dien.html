@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<h2>Từ điển tiếng Anh</h2>
+<p>Các từ có thể dịch: learn, go, help, school</p>
+<label><input type="text" id="english"></label>
+<button type="button" onClick="trans()">Dịch</button>
+<p id="mean"></p>
+<script>
+    let en = ["learn","go","help","school"];
+    let vn = ["học","đi","giúp đỡ","trường học"];
+    function trans() {
+        let word = document.getElementById("english").value;
+        for (let i = 0; i < en.length; i++) {
+            if (en[i] === word) {
+                document.getElementById("mean").innerText = "Nghĩa tiếng Việt của từ này là " + vn[i];
+                break;
+            } else {
+                document.getElementById("mean").innerText = "Không tìm thấy.";
+            }
+        }
+    }
+</script>
+</body>
+</html>

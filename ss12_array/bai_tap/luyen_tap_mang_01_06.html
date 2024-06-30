@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>V is in the array</title>
+</head>
+<body>
+<script>
+    let num = [23, 231, 42, 5, -6, 30, 12, 43, 55, 90];
+    document.write("Mảng ban đầu: " + num + "<br>");
+    let v = +prompt("Nhập số nguyên V:");
+    if (num.indexOf(v) !== -1) {
+        document.write(v + " có thuộc mảng");
+    } else {
+        document.write(v + " không thuộc mảng");
+    }
+</script>
+</body>
+</html>

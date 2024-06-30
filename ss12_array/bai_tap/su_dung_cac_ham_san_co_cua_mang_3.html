@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển các ký tự chữ thường sang thành dạng chữ hoa</title>
+</head>
+<body>
+<script>
+    let text = prompt("Nhập vào một câu: ");
+    let arr = [];
+    for (let i = 0; i < text.length; i++) {
+        arr.push(text[i]);
+    }
+    let upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let lower = "abcdefghijklmnopqrstuvwxyz";
+    for (let x = 0; x < arr.length; x++) {
+        if (upper.indexOf(arr[x]) !== -1) {
+            arr.splice(x, 1, lower[upper.indexOf(arr[x])]);
+        } else if (lower.indexOf(arr[x]) !== -1) {
+            arr.splice(x, 1, upper[lower.indexOf(arr[x])]);
+        }
+    }
+    document.write(arr.join(''));
+</script>
+</body>
+</html>
