@@ -15,13 +15,11 @@
     let vn = ["học","đi","giúp đỡ","trường học"];
     function trans() {
         let word = document.getElementById("english").value;
-        for (let i = 0; i < en.length; i++) {
-            if (en[i] === word) {
-                document.getElementById("mean").innerText = "Nghĩa tiếng Việt của từ này là " + vn[i];
-                break;
-            } else {
-                document.getElementById("mean").innerText = "Không tìm thấy.";
-            }
+        if (en.indexOf(word) !== -1) {
+            let p = en.indexOf(word);
+            document.getElementById("mean").innerText = "Nghĩa tiếng Việt của từ này là: " + vn[p];
+        } else {
+            document.getElementById("mean").innerText = "Không tìm thấy.";
         }
     }
 </script>
