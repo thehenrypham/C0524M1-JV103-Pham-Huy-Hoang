@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược mảng</title>
+</head>
+<body>
+<script>
+    let symbols = prompt("Viết tất cả ký tự mà bạn muốn: ");
+    let arr1 = [];
+    for (let i = 0; i <= symbols.length; i++) {
+        arr1.push(symbols[i]);
+    }
+    document.write("Mảng ban đầu: " + arr1.join("") + "<br>");
+    let arr2 = arr1.reverse();
+    document.write("Mảng đảo ngược: " + arr2.join("") + "<br>");
+
+</script>
+</body>
+</html>
