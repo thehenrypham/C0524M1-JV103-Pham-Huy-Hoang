@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra xem hai chuỗi có giống nhau hay không.</title>
+</head>
+<body>
+<script>
+    let arr1;
+    let arr2;
+    arr1 = [32, 324, 453, 23];
+    arr2 = [35, 534, 235, 23];
+    document.write("Mảng 1 là: " + arr1 + "<br>");
+    document.write("Mảng 2 là: " + arr2 + "<br>");
+
+    if (arr1.length === arr2.length) {
+        for (let i = 1; i <= arr1.length; i++) {
+            if (arr1[i] === arr2[i]) {
+                document.write("Hai mảng giống nhau");
+            } else {
+                document.write("Hai mảng không giống nhau");
+                break;
+            }
+        }
+    } else {
+        document.write("Hai mảng không nhau");
+    }
+</script>
+</body>
+</html>

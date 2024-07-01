@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này bởi ký tự ( _ )</title>
+</head>
+<body>
+<script>
+    let symbols = prompt("Nhập vào tất cả các ký tự mà bạn muốn:");
+    let arr = [];
+    for (let i = 0; i <= symbols.length; i++) {
+        arr.push(symbols[i]);
+    }
+    document.write("Mảng ký tự mà bạn vừa nhập là: " + arr + "<br>");
+    document.write("Thay ký tự (-) bằng ký tự (_): ");
+    for (let j = 0; j <= arr.length; j++) {
+        if (arr[j] === "-") {
+            arr.splice(j,1,"_");
+        }
+    }
+    document.write(arr);
+</script>
+</body>
+</html>
