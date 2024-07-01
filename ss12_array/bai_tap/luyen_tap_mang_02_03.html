@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Đếm số ký tự số trong mảng</title>
 </head>
 <body>
-
+<script>
+    let symbols = prompt("Viết tất cả ký tự mà bạn muốn: ");
+    let arr = [];
+    for (let i = 0; i <= symbols.length; i++) {
+        arr.push(symbols[i]);
+    }
+    let num = 0;
+    for (let j = 0; j <= arr.length; j++) {
+        if (arr[j] === isNaN) {
+            num++;
+        }
+    }
+    let b = arr.length - num;
+    document.write("Số lượng ký tự số trong mảng là: " + b);
+</script>
 </body>
 </html>
