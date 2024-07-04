@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm truyền vào một mảng ký tự</title>
+</head>
+<body>
+<script>
+    let number = +prompt("Nhập vào số lượng phần tử trong mảng:");
+    let arr = [];
+    for (let i = 0; i < number; i++) {
+        let j = prompt(`Nhập vào phần tử thứ tự ${i}`);
+        arr.push(j);
+    }
+    let char = prompt("Nhập một ký tự bất kỳ:");
+    // alert(arr.indexOf(char));
+    function check() {
+        let count = 0;
+        if (arr.indexOf(char) !== -1) {
+            for (let x = 0; x <= arr.length; x++) {
+                if (arr[x] === char) {
+                    count++;
+                }
+            }
+            alert(`Số lần xuất hiện của phần tử "${char}" là ${count}`)
+        } else {
+            alert("-1");
+        }
+    }
+    check();
+</script>
+</body>
+</html>
