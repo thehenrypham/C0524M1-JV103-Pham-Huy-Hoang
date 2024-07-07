@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Kiểm tra số nguyên dương</title>
 </head>
 <body>
-
+<script>
+    let n = prompt("Nhập vào ký tự bất kỳ:");
+    function check(n){
+        return n > 0 && n % 1 === 0;
+    }
+    alert(check(n));
+    // console.log(check(n));
+</script>
 </body>
 </html>

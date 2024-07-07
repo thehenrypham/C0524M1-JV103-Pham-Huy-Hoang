@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không</title>
 </head>
 <body>
-
+<script>
+    let n = prompt("Nhập vào ký tự bất kỳ:");
+    function checkNumber(n) {
+        return n >= 0 || n < 0;
+    }
+    alert(checkNumber(n));
+    // console.log(checkNumber(n));
+</script>
 </body>
 </html>

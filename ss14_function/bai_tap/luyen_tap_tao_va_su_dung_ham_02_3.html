@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào</title>
 </head>
 <body>
-
+<script>
+    do (n = prompt("Nhập số nguyên dương bất kỳ:"));
+    while (n < 1 || n % 1 !==0 );
+    let x = 1;
+    function giaiThua(n) {
+        for (let i = 1; i <= n; i++) {
+            x = x * i;
+        } return x;
+    }
+    alert(`Giai thừa của ${n} là ` + giaiThua(n));
+</script>
 </body>
 </html>
