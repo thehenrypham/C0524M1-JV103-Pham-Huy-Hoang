@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let danhSachNgoiSao =["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe","Regulus"];
+    let danhSachChomSao =["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major","Leo"];
+    function timNgoiSao(ngoSao) {
+        for (let i = 0; i <danhSachChomSao.length ; i++) {
+            if (danhSachNgoiSao[i]===ngoSao){
+                return danhSachChomSao[i];
+            }
+        }
+        return "không tìm thấy ngôi sao nào";
+    }
+    alert(timNgoiSao("Vegas"));
+</script>
+</body>
+</html>

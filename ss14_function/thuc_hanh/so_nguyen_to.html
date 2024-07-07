@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // hàm kiểm tra số nguyên tố
+    function isPrime(number){
+       if (number<2){
+           return false;
+       }else {
+           for (let i = 2; i <=Math.sqrt(number) ; i++) {
+               if (number%i==0){
+                   return false;
+               }
+           }
+           return true;
+       }
+    }
+    let result = "";
+    // hiển thị tất cả các số nguyên tố nhỏ hơn 10000;
+    for (let i = 0; i <=10000 ; i++) {
+        if (isPrime(i)){
+            result += i +","
+        }
+    }
+    document.write(result);
+
+     // bài mở rộng
+    // viết hàm có tham só truyền vào là một mảng
+    // hàm trả về 1 mảng chưa tất cả các số nguyên tố có trong mảng truyền vào.
+    // sắp xếp các mảng số nguyên tố trước khi hiển thị
+
+   function findPrimeNumber(arr) {
+       let primeArray =[];
+       for (let i = 0; i <arr.length ; i++) {
+           if (isPrime(arr[i])){
+               primeArray.push(arr[i]);
+           }
+       }
+       primeArray.sort(function (a,b) {
+          return b-a;
+       })
+       return primeArray;
+   }
+   let array = [3,6,7,8,11,23,5,4];
+   alert(findPrimeNumber(array))
+</script>
+</body>
+</html>

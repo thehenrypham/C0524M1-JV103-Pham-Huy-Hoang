@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Viết hàm tính bình phương của một số bất kỳ được đưa vào</title>
 </head>
 <body>
-
+<script>
+    let num = +prompt("Nhập số bất kỳ:");
+    function square() {
+        let x;
+        x = num**2;
+        return x;
+    }
+    // square();
+    alert(`Bình phương của ${num} là ${square()}`)
+</script>
 </body>
 </html>
