@@ -6,17 +6,19 @@
 </head>
 <body>
 <script>
-    let Rectangle = function(length,width) {
-        this.length = length;
-        this.width = width;
-        this.getArea = function() {
+    class Rectangle {
+        constructor(length, width) {
+            this.length = length;
+            this.width = width
+        }
+        getArea() {
             return this.length * this.width;
         }
-        this.getPeri = function() {
+        getPeri() {
             return (this.length + this.width) * 2;
         }
     }
-    let rectangle = new Rectangle(20,30);
+    let rectangle = new Rectangle(20, 30);
     let length = rectangle.length;
     let width = rectangle.width;
     let area = rectangle.getArea();
