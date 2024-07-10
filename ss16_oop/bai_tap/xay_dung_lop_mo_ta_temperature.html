@@ -6,12 +6,14 @@
 </head>
 <body>
 <script>
-    let Temp = function(celsius) {
-        this.celsius = celsius;
-        this.getFahr = function() {
+    class Temp {
+        constructor(celsius) {
+            this.celsius = celsius;
+        }
+        getFahr() {
             return (this.celsius * 9 / 5) + 32;
         }
-        this.getKen = function() {
+        getKen() {
             return this.celsius + 273;
         }
     }
