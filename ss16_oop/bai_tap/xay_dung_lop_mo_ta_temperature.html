@@ -8,12 +8,6 @@
 <script>
     let Temp = function(celsius) {
         this.celsius = celsius;
-        this.getCelsius = function() {
-            return this.celsius;
-        }
-        this.setCelsius = function(celsius) {
-            this.celsius = celsius;
-        }
         this.getFahr = function() {
             return (this.celsius * 9 / 5) + 32;
         }
@@ -21,11 +15,13 @@
             return this.celsius + 273.15;
         }
     }
-    let temp = new Temp();
-    temp.setCelsius(25);
-    document.write("Độ C là: " + temp.getCelsius() + "<br>");
-    document.write("Độ F là: " + temp.getFahr() + "<br>");
-    document.write("Độ K là: " + temp.getKen() + "<br>");
+    let temp = new Temp(25);
+    let celsius = temp.celsius;
+    let fahr = temp.getFahr();
+    let ken = temp.getKen();
+    document.write("Độ C là: " + celsius + "<br>");
+    document.write("Độ F là: " + fahr + "<br>");
+    document.write("Độ K là: " + ken + "<br>");
 </script>
 </body>
 </html>
