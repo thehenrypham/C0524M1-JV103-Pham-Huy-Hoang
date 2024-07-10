@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<script>
+    let Rectangle = function(length,width) {
+        this.length = length;
+        this.width = width;
+        this.getLength = function() {
+            return this.length;
+        }
+        this.getWidth = function() {
+            return this.width;
+        }
+        this.setLength = function(length) {
+            this.length = length;
+        }
+        this.setWidth = function(width) {
+            this.width = width;
+        }
+        this.getArea = function() {
+            return this.length * this.width;
+        }
+        this.getPeri = function() {
+            return (this.length + this.width) * 2;
+        }
+    }
+    let rectangle = new Rectangle();
+    rectangle.setLength(20);
+    rectangle.setWidth(30);
+    document.write("Chiều dài: " + rectangle.getLength() + "<br>");
+    document.write("Chiều rộng: " + rectangle.getWidth() + "<br>");
+    document.write("Diện tích: " + rectangle.getArea() + "<br>");
+    document.write("Chu vi: " + rectangle.getPeri());
+</script>
+</body>
+</html>

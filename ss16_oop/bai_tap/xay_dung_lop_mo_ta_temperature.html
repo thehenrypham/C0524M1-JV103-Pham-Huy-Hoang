@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả Temperature</title>
+</head>
+<body>
+<script>
+    let Temp = function(celsius) {
+        this.celsius = celsius;
+        this.getCelsius = function() {
+            return this.celsius;
+        }
+        this.setCelsius = function(celsius) {
+            this.celsius = celsius;
+        }
+        this.getFahr = function() {
+            return (this.celsius * 9 / 5) + 32;
+        }
+        this.getKen = function() {
+            return this.celsius + 273.15;
+        }
+    }
+    let temp = new Temp();
+    temp.setCelsius(25);
+    document.write("Độ C là: " + temp.getCelsius() + "<br>");
+    document.write("Độ F là: " + temp.getFahr() + "<br>");
+    document.write("Độ K là: " + temp.getKen() + "<br>");
+</script>
+</body>
+</html>
