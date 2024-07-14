@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Lamp{
+        constructor() {
+            this.lampStatus = false; // khởi tạo mặc đinh là tắt
+        }
+        turnOff(){
+            this.lampStatus = false; // đèn tắt
+        }
+        turnOn(){
+            this.lampStatus = true;  // đèn sáng
+        }
+    }
+
+
+    class Switch{
+        constructor() {
+            this.switchStatus = false; // mặc đinh công tắc mở
+            this.lamp = null;// chưa kết nối/ chưa gán giá trị
+        }
+        connectToLamp (den){
+            // nếu công tắc chưa kết nối với bóng đèn nào thì mới đươc kết nối với bóng đèn khác
+            if (this.lamp==null){
+                this.lamp = den;
+            }else {
+                alert("công tắc đã kết nối với một bóng đèn khác rồi");
+            }
+
+        }
+        switchOff(){
+            this.switchStatus = false; // trạng thái của công tắc tắt
+            // kiểm tra đèn đã được kết nối hay chưa
+            if (this.lamp !=null){
+                this.lamp.turnOff();
+            }
+
+        }
+        switchOn(){
+            this.switchStatus = true; // trạng thái của công tắc tắt
+            // kiểm tra đèn đã được kết nối hay chưa
+            if (this.lamp!=null){
+                this.lamp.turnOn();
+            }
+
+        }
+    }
+
+    let bongDen1 = new Lamp();
+    let bongDen2 = new Lamp();
+    let congTac = new Switch();
+    // kết nối với bòng đèn 1
+    console.log("kết nối với bòng đèn 1:")
+    congTac.connectToLamp(bongDen1);
+    console.log("Kết nối với bòng đèn 2");
+    congTac.connectToLamp(bongDen2);
+
+    congTac.switchOn();
+    console.log("bất công tắc: ")
+    console.log("trạng thái công tắc: " + congTac.switchStatus);
+    console.log("trạng thái bóng đèn1: " + bongDen1.lampStatus);
+    console.log("trạng thái bóng đèn2: " + bongDen2.lampStatus);
+
+    congTac.switchOff();
+    console.log("tắt công tắc: ")
+    console.log("trạng thái công tắc: " + congTac.switchStatus);
+    console.log("trạng thái bóng đèn1: " + bongDen1.lampStatus);
+    console.log("trạng thái bóng đèn2: " + bongDen2.lampStatus);
+
+    // tham trị : gọi hàm truyền một biến kiểu nguyên thuỷ => thay đổi giá bên trong hàm thì ngoai hàm không thay đổi
+    // tham chiếu: gọi hàm truyêmf một biến kiểu đối tượng => thay đổi trong hàm thì ngoài hàm cũng thay đổi.
+
+
+</script>
+</body>
+</html>
