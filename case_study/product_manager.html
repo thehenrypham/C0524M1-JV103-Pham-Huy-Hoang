@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Quản lý sản phẩm tồn kho</title>
+    <style>
+        table, p, h1, h2, h3, h4, h5, h6, ol, ul {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        p, ol, ul {
+            margin-top: -10px;
+        }
+
+        td, th {
+            border: 1px solid #a8a8a8;
+            text-align: center;
+            padding: 8px;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #dddddd;
+        }
+
+        button {
+            padding: 10px 30px 10px 30px;
+            font-size: 14px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input, select {
+            padding: 8px 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<h2 id="addProduct">ADD A PRODUCT</h2>
+<h2 id="editProduct" hidden>EDIT PRODUCT</h2>
+<table>
+    <tr>
+        <th>PRODUCT PHOTO</th>
+        <th>PRODUCT NAME*</th>
+        <th>CATEGORY</th>
+        <th>QUANTITY*</th>
+        <th>COLOR</th>
+        <th>PRICE($)*</th>
+        <th>STATUS</th>
+    </tr>
+    <tr>
+        <td><label><input type="text" id="photo" placeholder="Input Image Link"></label></td>
+        <td><label><input type="text" id="name" placeholder="Input Product Name"></label></td>
+        <td><label>
+            <select id="category">
+                <option value="Unknown">Select Category</option>
+                <option value="Mobile">Mobile</option>
+                <option value="Laptop">Laptop</option>
+                <option value="Tablet">Tablet</option>
+                <option value="Smartwatch">Smartwatch</option>
+                <option value="Headphone">Headphone</option>
+            </select>
+        </label></td>
+        <td><label><input type="number" id="quantity" placeholder="Input Quantity"></label></td>
+        <td><label>
+            <input name="color" type="checkbox" id="white" value="White"> White
+            <input name="color" type="checkbox" id="black" value="Black"> Black
+            <input name="color" type="checkbox" id="blue" value="Blue"> Blue
+        </label></td>
+        <td><label><input type="number" id="price" placeholder="Input Price"></label></td>
+        <td><label>
+            <select id="status">
+                <option value="Available">Available</option>
+                <option value="Out of stock">Out of stock</option>
+            </select>
+        </label></td>
+    </tr>
+</table>
+<br>
+<button style="background-color: #103ffb;color: white" type="button" onClick="saveProduct()" id="save" hidden><i
+        class="fa fa-save"></i> Save
+</button>
+<button type="button" onClick="cancelEdit()" id="cancel" hidden>Cancel</button>
+<button style="background-color: darkgreen;color: white" type="button" onClick="addProduct()" id="submit"><i
+        class="fa fa-plus"></i> Add Now
+</button>
+<button type="button" onClick="clearInfor()" id="clear"><i class="fa fa-eraser"></i> Clear</button>
+<h3>Hướng dẫn nhập sản phẩm mới:</h3>
+<ul>
+    <li>Những mục đánh dấu (*) là bắt buộc nhập thông tin.</li>
+    <li>Sản phẩm mới không được trùng tên với sản phẩm đã có.</li>
+    <li>Mục Product Photo nhập link ảnh có đuôi jpg, png hoặc gif.</li>
+    <li>Số lượng sản phẩm phải là số nguyên dương.</li>
+    <li>Giá sản phẩm phải là số dương.</li>
+</ul>
+<hr>
+<h2>MANAGE PRODUCTS</h2>
+<label><input type="text" id="search" class="input1" placeholder="Input Product Name"></label>
+<button style="background-color: black;color: white" type="button" onClick="searchProduct()"><i
+        class="fa fa-search"></i> Search
+</button>
+<button type="button" onClick="clearSearch()"><i class="fa fa-eraser"></i> Clear</button>
+<h3>Hướng dẫn tìm kiếm sản phẩm:</h3>
+<ul>
+    <li>Nhập đúng tên sản phẩm.</li>
+    <li>Không phân biệt chữ thường và hoa.</li>
+</ul>
+<br>
+<p style="font-style:italic" id="total"></p>
+<table>
+    <thead>
+    <tr>
+        <th>PRODUCT ID</th>
+        <th>PRODUCT PHOTO</th>
+        <th>PRODUCT NAME</th>
+        <th>CATEGORY</th>
+        <th>QUANTITY</th>
+        <th>COLOR</th>
+        <th>PRICE($)</th>
+        <th>STATUS</th>
+        <th>ACTION</th>
+    </tr>
+    </thead>
+    <tbody id="body"></tbody>
+</table>
+<script src="product_class.js"></script>
+<script>
+    // Create Product
+    let product1 = new Product(
+        1,
+        "https://cdn.tgdd.vn/Products/Images/42/305658/iphone-15-pro-max-blue-thumbnew-600x600.jpg",
+        "iPhone 15 Pro Max",
+        "Mobile",
+        2000,
+        ["White"],
+        1000,
+        "Available",
+        1,
+        0
+    )
+    let product2 = new Product(
+        2,
+        "https://cdn.tgdd.vn/Products/Images/44/316940/msi-gaming-gf63-thin-12ucx-i5-873vn-glr-thumb-600x600.jpg",
+        "MSI Gaming Thin i5",
+        "Laptop",
+        3000,
+        ["Black"],
+        1200,
+        "Available",
+        1,
+        0
+    )
+    let product3 = new Product(
+        3,
+        "https://cdn.tgdd.vn/Products/Images/522/294103/iPad-Gen-10-sliver-thumb-600x600.jpg",
+        "iPad Gen10 64GB",
+        "Tablet",
+        4000,
+        ["White", "Blue"],
+        800,
+        "Out of stock",
+        1,
+        0
+    )
+    let product4 = new Product(
+        4,
+        "https://cdn.tgdd.vn/Products/Images/7077/316007/apple-watch-se-2023-40mm-vien-nhom-day-silicone-trang-thumb-1-600x600.jpg",
+        "Apple Watch SE",
+        "Smartwatch",
+        1000,
+        ["White", "Black", "Blue"],
+        900,
+        "Available",
+        1,
+        0
+    )
+    let product5 = new Product(
+        5,
+        "https://cdn.tgdd.vn/Products/Images/54/320250/tai-nghe-bluetooth-chup-tai-havit-h667bt-xanh-tn-600x600.jpg",
+        "Tai nghe Bluetooth",
+        "Headphone",
+        500,
+        ["Blue"],
+        300,
+        "Available",
+        1,
+        0
+    )
+
+    // Đặt sản phẩm vào mảng
+    let listProduct = [product1, product2, product3, product4, product5];
+
+</script>
+<script src="function.js"></script>
+</body>
+</html>
