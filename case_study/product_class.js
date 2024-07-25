@@ -10,7 +10,6 @@ class Product {
         this.price = price;
         this.status = status;
         this.show = show;
-        this.search = search;
     }
     setID(id) {
         this.id = id;
@@ -38,8 +37,5 @@ class Product {
     }
     setShow(show) {
         this.show = show;
-    }
-    setSearch(search) {
-        this.search = search;
     }
 }

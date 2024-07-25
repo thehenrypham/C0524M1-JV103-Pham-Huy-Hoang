@@ -1,17 +1,17 @@
 // Hiển thị sản phẩm
-function displayProduct() {
+function displayProduct(list) {
     let str = "";
-    for (let i = 0; i < listProduct.length; i++) {
-        if (listProduct[i].show > 0) {
+    for (let i = 0; i < list.length; i++) {
+        if (list[i].show > 0) {
             str += `<tr>
-                <td>${listProduct[i].id}</td>
-                <td><img src="${listProduct[i].photo}" alt="${listProduct[i]}" style="width:auto; height:50px"></td>
-                <td>${listProduct[i].name}</td>
-                <td>${listProduct[i].category}</td>
-                <td>${listProduct[i].quantity}</td>
-                <td>${listProduct[i].color}</td>
-                <td>${listProduct[i].price}</td>
-                <td>${listProduct[i].status}</td>
+                <td>${list[i].id}</td>
+                <td><img src="${list[i].photo}" alt="${list[i]}" style="width:auto; height:50px"></td>
+                <td>${list[i].name}</td>
+                <td>${list[i].category}</td>
+                <td>${list[i].quantity}</td>
+                <td>${list[i].color}</td>
+                <td>${list[i].price}</td>
+                <td>${list[i].status}</td>
                 <td><button style="background-color: #103ffb;color: white" type="button" onClick="editProduct(${i})"><i class="fa fa-pencil"></i> Edit</button>
                 <button style="background-color: crimson;color: white" type="button" onClick="removeProduct(${i})"><i class="fa fa-trash"></i> Remove</button></td>
                 </tr>`;
@@ -85,9 +85,8 @@ function addProduct2() {
         product.setPrice(+document.getElementById("price").value);
         product.setStatus(document.getElementById("status").value);
         product.setShow(1);
-        product.setSearch(0);
         listProduct.push(product);
-        displayProduct();
+        displayProduct(listProduct);
         countProduct();
         alert("Product added successfully.");
         clearInfor();
@@ -112,7 +111,7 @@ function removeProduct(i) {
     let c = confirm("Are you want to remove this product?");
     if (c === true) {
         listProduct[i].setShow(0);
-        displayProduct();
+        displayProduct(listProduct);
         countProduct();
         alert("Product removed successfully.");
     }
@@ -166,13 +165,12 @@ function saveProduct() {
         listProduct[productID].setColor(arrColors);
         listProduct[productID].setPrice(document.getElementById("price").value);
         listProduct[productID].setStatus(document.getElementById("status").value);
-        displayProduct();
+        displayProduct(listProduct);
         alert("Product edited successfully.");
         document.getElementById("submit").hidden = false;
         document.getElementById("save").hidden = true;
         document.getElementById("clear").hidden = false;
         document.getElementById("cancel").hidden = true;
-
         clearInfor();
         e = 0;
     }
@@ -189,36 +187,20 @@ function cancelEdit() {
 }
 
 function searchProduct() {
+    let searchList = [];
     let str1 = document.getElementById("search").value.toLowerCase();
     for (let i = 0; i < listProduct.length; i++) {
         let str2 = listProduct[i].name.toLowerCase();
         if (str2.includes(str1) === true) {
-            listProduct[i].setSearch(1);
-        } else listProduct[i].setSearch(0);
-    }
-    let str = "";
-    for (let i = 0; i < listProduct.length; i++) {
-        if (listProduct[i].search > 0) {
-            str += `<tr>
-                <td>${listProduct[i].id}</td>
-                <td><img src="${listProduct[i].photo}" alt="${listProduct[i]}" style="width:auto; height:50px"></td>
-                <td>${listProduct[i].name}</td>
-                <td>${listProduct[i].category}</td>
-                <td>${listProduct[i].quantity}</td>
-                <td>${listProduct[i].color}</td>
-                <td>${listProduct[i].price}</td>
-                <td>${listProduct[i].status}</td>
-                <td><button style="background-color: #103ffb;color: white" type="button" onClick="editProduct(${i})"><i class="fa fa-pencil"></i> Edit</button>
-                <button style="background-color: crimson;color: white" type="button" onClick="removeProduct(${i})"><i class="fa fa-trash"></i> Remove</button></td>
-                </tr>`;
+            searchList.push(listProduct[i]);
         }
     }
-    document.getElementById("body").innerHTML = str;
+    displayProduct(searchList);
     countProduct();
 }
 
 function clearSearch() {
-    displayProduct();
+    displayProduct(listProduct);
     document.getElementById("search").value = "";
 }
 
