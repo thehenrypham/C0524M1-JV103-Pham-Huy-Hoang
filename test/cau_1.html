@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 1</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt("Nhập số lượng phần tử của mảng: "));
+    if (n > 20) {
+        n = parseInt(prompt("Vui lòng nhập lại. Số phần tử cần <= 20: "));
+    }
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr[i] = parseInt(prompt("Nhập phần tử thứ " + (i + 1) + ": "));
+    }
+    document.write("Các phần tử của mảng là: " + arr + "<br>");
+    let chan = 0;
+    let le = 0;
+    for (let i = 0; i < n; i++) {
+        if (arr[i] % 2 === 0) {
+            chan += arr[i];
+        } else {
+            le += arr[i];
+        }
+    }
+    let hieu = chan - le;
+    document.write("Kết quả = (tổng các số chẵn - tổng các số lẻ) = " + hieu);
+</script>
+</body>
+</html>

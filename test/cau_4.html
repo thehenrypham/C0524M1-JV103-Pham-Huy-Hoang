@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Câu 4</title>
+    <style>
+        table, p, h1, h2, h3, h4, h5, h6, ol, ul {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        p, ol, ul {
+            margin-top: -10px;
+        }
+        td, th {
+            border: 1px solid #a8a8a8;
+            text-align: center;
+            padding: 8px;
+        }
+        button {
+            padding: 10px 30px 10px 30px;
+            font-size: 14px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input, select {
+            padding: 8px 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<h2 id="addProduct">ADD A PRODUCT</h2>
+<table>
+    <tr>
+        <th>CODE</th>
+        <th>NAME</th>
+        <th>BRAND</th>
+        <th>PRICE</th>
+    </tr>
+    <tr>
+        <td><label><input type="text" id="code"></label></td>
+        <td><label><input type="text" id="name"></label></td>
+        <td><label><input type="text" id="brand"></label></td>
+        <td><label><input type="number" id="price"></label></td>
+    </tr>
+</table>
+<br>
+<button style="background-color: darkgreen;color: white" type="button" onClick="addProduct()" id="submit"><i
+        class="fa fa-plus"></i> Add Now
+</button>
+<h2>MOBILE LIST</h2>
+<table>
+    <thead>
+    <tr>
+        <th>CODE</th>
+        <th>NAME</th>
+        <th>BRAND</th>
+        <th>PRICE</th>
+    </tr>
+    </thead>
+    <tbody id="body"></tbody>
+</table>
+<script>
+    // Khai bao lop dien thoai
+    class Mobile {
+        constructor(code, name, brand, price) {
+            this.code = code;
+            this.name = name;
+            this.brand = brand;
+            this.price = price;
+        }
+
+        setCode(code) {
+            this.code = code;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        setBrand(brand) {
+            this.brand = brand;
+        }
+
+        setPrice(price) {
+            this.price = price;
+        }
+
+        getCode() {
+            return this.code;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getBrand() {
+            return this.brand;
+        }
+
+        getPrice() {
+            return this.price;
+        }
+        toString() {
+            return `Code: ${this.code}, Name: ${this.name}, Brand: ${this.brand}, Price: $${this.price}`;
+        }
+    }
+    // Khai bao dien thoai
+    let mobile1 = new Mobile (
+        "Z1A",
+        "iPhone",
+        "Apple",
+        1000,
+    )
+    let mobile2 = new Mobile (
+        "Y2K",
+        "Galaxy",
+        "Samsung",
+        800,
+    )
+    let listProduct = [mobile1, mobile2];
+    function displayProduct(list) {
+        let str = "";
+        for (let i = 0; i < list.length; i++) {
+                str += `<tr>
+                <td>${list[i].code}</td>
+                <td>${list[i].name}</td>
+                <td>${list[i].brand}</td>
+                <td>${list[i].price}</td>
+                </tr>`;
+            }
+        document.getElementById("body").innerHTML = str;
+    }
+    displayProduct(listProduct);
+    function addProduct() {
+            let product = new Mobile();
+            product.setCode(document.getElementById("code").value);
+            product.setName(document.getElementById("name").value);
+            product.setBrand(document.getElementById("brand").value);
+            product.setPrice(+document.getElementById("price").value);
+            listProduct.push(product);
+            displayProduct(listProduct);
+            alert("Product added successfully.");
+            clearInfo();
+    }
+    function clearInfo() {
+        document.getElementById("code").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("brand").value = "";
+        document.getElementById("price").value = "";
+    }
+    // let name = [];
+    // function arrangeMobileName() {
+    //     for (let i = 0; i < listProduct.length; i++) {
+    //         name.push(listProduct[i].name);
+    //     }
+    // }
+    // let name2 = name.sort();
+    // function arrangeMobile() {
+    //     for (let i = 0; i < name2.length; i++) {
+    //         if (name2[i] = )
+    //     }
+    // }
+</script>
+</body>
+</html>

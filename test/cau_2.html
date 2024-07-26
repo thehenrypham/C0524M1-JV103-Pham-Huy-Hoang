@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 2</title>
+</head>
+<body>
+<script>
+    let str = prompt("Nhập vào chuỗi các ký tự chữ cái:");
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        let n = str[i].toLowerCase();
+        if (str[i] !== n) {
+            count++;
+        }
+    }
+    if (count > 0) {
+        document.write("Số lượng ký tự in hoa có trong chuỗi: " + count);
+    } else {
+        document.write("The Strings is not contain upper char");
+    }
+</script>
+</body>
+</html>

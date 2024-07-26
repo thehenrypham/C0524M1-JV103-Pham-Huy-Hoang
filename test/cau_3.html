@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 3</title>
+</head>
+<body>
+<script>
+    let numbers = [1,5,6,23,8,47,10,3];
+    let primes = [];
+    function isPrime(num) {
+        if (num <= 1) return false;
+        for (let i = 2; i < num; i++) {
+            if (num % i === 0) return false;
+        } return true;
+    }
+    for (let i = 0; i < numbers.length; i++) {
+        if (isPrime(numbers[i]) === true) {
+            primes.push(numbers[i]);
+        }
+    }
+    function sortPrimes(arr) {
+        return arr.sort(function(a,b) {
+            return a - b;
+        });
+    }
+    sortPrimes(primes);
+    document.write("Mảng ban đầu: " + numbers + "<br>");
+    document.write("Các số nguyên trong mảng: " + primes);
+</script>
+</body>
+</html>
